@@ -419,10 +419,10 @@ module XMLRPC # :nodoc:
             if Config::ENABLE_NIL_PARSER
               v_nil(child)
             else
-              raise "wrong/unknown XML-RPC type 'nil'"
+              #raise "wrong/unknown XML-RPC type 'nil'"
             end
           else
-            raise "wrong/unknown XML-RPC type"
+            #raise "wrong/unknown XML-RPC type"
           end
         else
           raise "wrong type of node"
@@ -498,8 +498,8 @@ module XMLRPC # :nodoc:
         when "value"
           @value = nil
         when "nil"
-          raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
-          @value = :nil
+          #raise "wrong/unknown XML-RPC type 'nil'" unless Config::ENABLE_NIL_PARSER
+          #@value = :nil
         when "array"
           @val_stack << @values
           @values = []
@@ -639,4 +639,3 @@ module XMLRPC # :nodoc:
 
 
 end # module XMLRPC
-
